@@ -30,7 +30,7 @@ in rec {
         tar -cf - \
           --owner=0 --group=0 --mode=u+rw,uga+r \
           --hard-dereference \
-          $storePaths | bzip2 -z > $out
+          $storePaths | xz -9e -T $(nproc)  > $out
       '';
     };
 
