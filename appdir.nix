@@ -1,7 +1,7 @@
-{ stdenv, fetchurl, muslPkgs, perl, pathsFromGraph, fetchFromGitHub, coreutils, bash }:
+{ stdenv, fetchurl, pkgs, perl, pathsFromGraph, fetchFromGitHub, coreutils, bash }:
 
 let
-  AppRun = targets: muslPkgs.stdenv.mkDerivation {
+  AppRun = targets: pkgs.stdenv.mkDerivation {
     name = "AppRun";
 
     phases = [ "buildPhase" "installPhase" "fixupPhase" ];
